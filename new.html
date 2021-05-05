@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+* {box-sizing: border-box}
+body {font-family: algerian, sans-serif; margin:0}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background-image: url(ab.jpg);
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 20%;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: indianred;}
+</style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+
+<div class="mySlides">
+  <h1>Even if you are not perfect you're limited edition, anyway someone wants you, so just do you.</h1>
+  <p class="author">─ Kim Namjoon</p>
+</div>
+
+<div class="mySlides">
+  <h1>It's not that I believe it, but that I want to try holding out. Because this is all I can do.</h1>
+  <p class="author">- Kim Seokjin</p>
+</div>
+
+<div class="mySlides">
+  <h1>Even when this rain stops, when the clouds go away, I stand here, just the same.</h1>
+  <p class="author">- Jung Hoseok</p>
+</div>
+
+<div class="mySlides">
+
+   <h1>In the end they'll judge me anyway, so whatever</h1>
+  <p class="author">- Min Yoongi</p>
+</div>
+
+<div class="mySlides">
+  <h1>WE BOTH KNOW IT IS BETTER IF WE JUST LET IT GO!!</h1>
+  <p class="author">- Park Jimin</p>
+</div>
+
+<div class="mySlides">
+  <h1>You are too young to let the world break you.</h1>
+  <p class="author">- Kim Taehyung</p>
+</div>
+
+<div class="mySlides">
+  <h1>I hope there will be a miracle of you loving me more than I love you.</h1>
+  <p class="author">- Jeon Jungkook</p>
+  <button type="Button" onClick="parent.location='wish.html'" style=" background-color:#E9967A; height: 50px; width: 100px">GO AHEAD</button>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+  </body>
+</html>
